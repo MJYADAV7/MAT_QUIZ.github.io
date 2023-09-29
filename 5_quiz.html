@@ -382,6 +382,8 @@
             questionsAsked = 0;
 	correctAnswers = 0;
                 incorrectAnswers = 0;
+                document.getElementById("levelCorrectAnswers").innerText = "Correct answers: " + correctAnswers;
+                document.getElementById("levelIncorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
             let nextLevelNumber = parseInt(currentLevel.charAt(currentLevel.length - 1)) + 1;
             if (nextLevelNumber <= 4) {
                 currentLevel = "level" + nextLevelNumber;
