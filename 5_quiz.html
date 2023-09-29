@@ -380,6 +380,8 @@
 
         function nextLevel() {
             questionsAsked = 0;
+	correctAnswers = 0;
+                incorrectAnswers = 0;
             let nextLevelNumber = parseInt(currentLevel.charAt(currentLevel.length - 1)) + 1;
             if (nextLevelNumber <= 4) {
                 currentLevel = "level" + nextLevelNumber;
@@ -506,7 +508,7 @@
             <ul class="scoreboard-list">
                 <li class="scoreboard-item">Manjeet : 118</li>
                 <li class="scoreboard-item">Nilesh  : 115</li>
-                <li class="scoreboard-item">Prnay   : 109</li>
+                <li class="scoreboard-item">Pranay   : 109</li>
                 <li class="scoreboard-item">Harshit  : 105</li>
                 <li class="scoreboard-item">Rohit : 101</li>
             </ul>
