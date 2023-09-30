@@ -294,7 +294,7 @@
                 document.getElementById("levelCorrectAnswers").innerText = "Correct answers: " + correctAnswers;
                 document.getElementById("levelIncorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
         	
-            if (questionsAsked >= 30) {
+            if (questionsAsked >= 2) {
 				const startTime = new Date().getTime();myFunction(startTime);
                 nextLevel();
                 return;
