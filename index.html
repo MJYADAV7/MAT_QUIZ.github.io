@@ -172,17 +172,18 @@
   });
 
   function playFullscreen(videoElement) {
-    if (videoElement.requestFullscreen) {
-      videoElement.requestFullscreen();
-    } else if (videoElement.mozRequestFullScreen) {
-      videoElement.mozRequestFullScreen();
-    } else if (videoElement.webkitRequestFullscreen) {
-      videoElement.webkitRequestFullscreen();
-    } else if (videoElement.msRequestFullscreen) {
-      videoElement.msRequestFullscreen();
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.mozRequestFullScreen) {
+        videoElement.mozRequestFullScreen();
+      } else if (videoElement.webkitRequestFullscreen) {
+        videoElement.webkitRequestFullscreen();
+      } else if (videoElement.msRequestFullscreen) {
+        videoElement.msRequestFullscreen();
+      }
+      // Set the video src when entering fullscreen mode
+      videoElement.src = "https://www.youtube.com/embed/AGkG2BpcFD8?autoplay=1";
     }
-  }
-});
  function enableStartButton() {
     var agreeCheckbox = document.getElementById("agree");
     var startButton = document.getElementById("startButton");
@@ -227,7 +228,7 @@
   </div>
 
   <div class="video-container" id="videoContainer">
-    <iframe id="videoPlayer" width="800" height="450" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/AGkG2BpcFD8?autoplay=1"></iframe>
+    <iframe id="videoPlayer" width="800" height="450" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src=""></iframe>
   </div>
 
 </body>
