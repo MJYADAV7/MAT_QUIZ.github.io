@@ -289,13 +289,13 @@
 			document.getElementById("answer1").disabled = false;
 			document.getElementById("answer2").disabled = false;
 			document.getElementById("answer3").disabled = false;
-	correctAnswers = 0;
-                incorrectAnswers = 0;
+	
                 document.getElementById("levelCorrectAnswers").innerText = "Correct answers: " + correctAnswers;
                 document.getElementById("levelIncorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
         	
-            if (questionsAsked >= 30) {
+            if (questionsAsked >= 10) {
 				const startTime = new Date().getTime();myFunction(startTime);
+				
                 nextLevel();
                 return;
             }
@@ -384,13 +384,12 @@
 
         function nextLevel() {
             questionsAsked = 0;
-	correctAnswers = 0;
+				correctAnswers = 0;
                 incorrectAnswers = 0;
-                document.getElementById("levelCorrectAnswers").innerText = "Correct answers: " + correctAnswers;
-                document.getElementById("levelIncorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
             let nextLevelNumber = parseInt(currentLevel.charAt(currentLevel.length - 1)) + 1;
             if (nextLevelNumber <= 4) {
-                currentLevel = "level" + nextLevelNumber;
+                
+				currentLevel = "level" + nextLevelNumber;
                 document.getElementById("level").innerText = currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
                 document.getElementById("question").innerText = "";
                 for(let i = 0; i < 4; i++) {
@@ -402,10 +401,9 @@
 
                 // Show the level results
                 document.getElementById("levelResults").innerText = "Level " + (nextLevelNumber - 1) + " Results:";
-                document.getElementById("levelCorrectAnswers").innerText = "Correct answers: " + correctAnswers;
-                document.getElementById("levelIncorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
-                correctAnswers = 0;
-                incorrectAnswers = 0;
+        document.getElementById("correctAnswers").innerText = "Correct answers: " + correctAnswers;
+        document.getElementById("incorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
+                
             }
             else {
 			callNext();
@@ -450,7 +448,7 @@
             startQuiz();
         }, 200);
     } else {
-        incorrectAnswers++;
+        incorrectAnswers ++;
         document.getElementById("incorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
         document.querySelector(".container").style.backgroundColor = "red";
         setTimeout(function() {
