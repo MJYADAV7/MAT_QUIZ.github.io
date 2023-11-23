@@ -406,15 +406,15 @@
                 
             }
             else {
-			callNext();
+			
                 document.getElementById("level").innerText = "Congratulations, Quiz completed!!!";
 				
                 document.getElementById("question").innerText = "";
                 document.getElementById("answerButtons").style.display = "none";
                 document.getElementById("startButton").style.display = "none";
-                document.getElementById("levelResults").innerText = "Final Results:";
-                document.getElementById("levelCorrectAnswers").innerText = "Please  " + correctAnswers;
-                document.getElementById("levelIncorrectAnswers").innerText = "Incorrect answers: " + incorrectAnswers;
+                document.getElementById("correctAnswers").innerText = "" ;
+        document.getElementById("incorrectAnswers").innerText = " " ;
+		document.getElementById("timer").innerText = "";
 				 document.getElementById("recoverybutton").style.display = "inline";
             }
         }
@@ -500,7 +500,7 @@
             <div id="correctAnswers">Correct answers: 0</div>
             <div id="incorrectAnswers">Incorrect answers: 0</div>
             <button id="startButton" onclick="startQuiz()">Start Level 1</button>
-			<button id="recoverybutton" onclick="callNext()">START</button>
+			<button id="recoverybutton" onclick="callNext()">SUBMIT</button>
             <div class="level-results" id="levelResults" style="display: none;"></div>
             <div id="levelCorrectAnswers" style="display: none;"></div>
             <div id="levelIncorrectAnswers" style="display: none;"></div>
